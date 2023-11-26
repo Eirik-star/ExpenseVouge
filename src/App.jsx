@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
+import { HashRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import { Login } from './pages/auth/Login'
 import { ExpenseVouge } from './pages/ExpenseVouge'
 import { useContext } from 'react'
