@@ -1,5 +1,6 @@
 import { ResponsiveContainer, PieChart, Pie, Cell, Legend } from 'recharts'
 import { useGetCategoryTotals } from '../hooks/useGetCategoryTotals'
+import { useMedia } from '@/hooks/useMedia';
 
 const COLORS = [
                 '#0088FE', 
@@ -16,6 +17,7 @@ const COLORS = [
 
 const DonutChart = () => {
   const { categories, categoryTotals } = useGetCategoryTotals()
+  const { isDesktop } = useMedia()
   var data =[]
   for(let i=0; i<categories.length; i++){
     data.push(
@@ -26,15 +28,16 @@ const DonutChart = () => {
   const filteredData = data.filter(item => item.value > 0)
 
   return (
-    <ResponsiveContainer width="90%" height={250}>
+    <>
+      <ResponsiveContainer width="90%" height={ !isDesktop ? 596 : 250 }>
       <PieChart>
         <Pie
           data={filteredData}
           dataKey="value"
           cx="50%"
           cy="50%"
-          innerRadius={45}
-          outerRadius={80}
+          innerRadius={!isDesktop ? 60 : 45}
+          outerRadius={!isDesktop ? 140 : 80}
           fill="#252525"
           label
         >
@@ -42,9 +45,10 @@ const DonutChart = () => {
             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} stroke={COLORS[index % COLORS.length]} />
           ))}
         </Pie>
-        <Legend layout="vertical" align="right" verticalAlign="middle" />
+        <Legend layout={!isDesktop ? "horizontal" : "vertical"} align={!isDesktop ? "center" : "right"} verticalAlign={!isDesktop ? "bottom" : "middle"} />
       </PieChart>
     </ResponsiveContainer>
+    </>
   );
 };
 

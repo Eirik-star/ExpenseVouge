@@ -24,7 +24,7 @@ import {
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant="ghost" className="relative h-8 w-8">
-            <Avatar className="h-12 w-12 rounded-lg">
+            <Avatar className="h-10 w-10 rounded-full my-auto">
               <AvatarImage src={profilePhoto} alt={name} />
               <AvatarFallback>{name.charAt(0)}</AvatarFallback>
             </Avatar>

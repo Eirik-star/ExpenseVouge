@@ -13,7 +13,7 @@ import {
 import { Input } from "./ui/input"
 import { useRef, useState } from 'react'
 import { useTransactionOperations } from '../hooks/useTransactionOperations'
-import { PenSquare } from "lucide-react"
+import { PenSquare, Plus } from "lucide-react"
 
   
 export default function NewTransaction(){
@@ -72,8 +72,11 @@ export default function NewTransaction(){
 
     return(
     <Dialog>
-        <DialogTrigger className="w-full flex items-center justify-evenly bg-rose-400 px- py-2 rounded-lg font-semibold text-sm cursor-pointer hover:bg-rose-500 border-2 border-black">
+        <DialogTrigger className="w-full items-center justify-evenly bg-rose-400 px- py-2 rounded-lg font-semibold text-sm cursor-pointer hover:bg-rose-500 border-2 border-black hidden lg:flex">
             <PenSquare height={22} /> <span>Add Transaction</span>
+        </DialogTrigger>
+        <DialogTrigger className="flex items-center justify-center w-14 h-14 bg-indigo-500 rounded-full lg:hidden">
+            <Plus size={28} />
         </DialogTrigger>
         <DialogContent className="bg-white border-2 border-black">
             <DialogHeader>

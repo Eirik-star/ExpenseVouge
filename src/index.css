@@ -242,14 +242,14 @@
 
   /* Main Container */
   .main-cont{
-    @apply w-[84.5vw] h-[99vh] border-black ring-0 ring-white border-2 rounded-xl bg-gray-100
+    @apply w-screen h-full lg:w-[84.5vw] lg:h-[99vh] lg:border-black lg:ring-0 lg:ring-white lg:border-2 lg:rounded-xl bg-[#FAF9F6] scroll-smooth
     /* @apply w-full h-full border-pink-500 bg-gray-100 */
   }
 
   /* Title */
   .title{
     /* @apply w-full h-16 border-black border-b-2 bg-[#252525] object-contain overflow-hidden rounded-t-lg */
-    @apply w-full h-16 bg-[#252525] object-contain overflow-hidden lg:border-black lg:border-b-2 lg:rounded-t-lg
+    @apply w-full h-16 fixed bg-[#252525] object-contain overflow-hidden lg:border-black lg:border-b-2 lg:rounded-t-lg
   }
 
   .title_text{
@@ -262,32 +262,47 @@
   }
 
   .left-cont{
-    /* @apply w-[55%] flex flex-col */
-    @apply w-[93%] lg:w-[55%] flex flex-col 
+    @apply w-[97%] lg:w-[55%] flex flex-col 
   }
 
   /* Balance  */
   .balance{
-    @apply h-64 flex flex-wrap items-center m-2 lg:h-32 lg:flex-nowrap lg:flex-row lg:items-center lg:gap-3
+    @apply h-56 flex flex-wrap items-center mt-[4.5rem] mb-3 gap-1 justify-center lg:h-32 lg:flex-nowrap lg:flex-row lg:items-center lg:gap-3
     /* @apply flex flex-wrap lg:flex-row */
   }
 
   .card-1{
-    @apply lg:w-full flex flex-row bg-green-400 border-none order-2 lg:order-1 w-1/2
+    @apply lg:w-full flex flex-row bg-green-400 border-none order-2 lg:order-1 w-[48.8%]
   }
 
   .card-2{
     /* @apply lg:w-full flex flex-row bg-blue-400 border-none order-1 lg:order-2 w-full */
-    @apply lg:w-full flex flex-row bg-blue-400 border-none order-1 lg:order-2 w-full mb-1
+    @apply lg:w-full flex flex-row bg-blue-400 border-none order-1 lg:order-2 w-[97.6%] 
   }
 
   .card-3{
-    @apply lg:w-full flex flex-row bg-red-500 border-none order-3 w-1/2
+    @apply lg:w-full flex flex-row bg-red-500 border-none order-3 w-[48.8%]
   }
+
+  .card-header{
+    @apply flex flex-row items-center justify-between space-y-0 pb-2
+  }
+
+  .card-header-2{
+    @apply flex flex-row items-center justify-between space-y-0 pb-2
+  }
+
+  .card-header-3{
+    @apply flex flex-row items-center justify-between space-y-0 pb-2
+  }
+
+  /* Recent Transactions */
+
+
 
 
   .right-cont{
-    @apply w-[40%] flex flex-col
+    @apply w-[40%] flex flex-col mt-[5rem]
 
 
   }

@@ -1,11 +1,12 @@
 import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis, LabelList } from "recharts"
 import { useGetDayTotals } from "@/hooks/useGetDayTotals"
+import { useMedia } from "@/hooks/useMedia"
 
 export function Graph() {
   const { expenseTotals, datesInRange } = useGetDayTotals()
+  const {isDesktop } = useMedia()
   const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
   const data=[]
-  console.log('Expense Totals:', expenseTotals)
   for(let i =0; i<days.length; i++){
     data.push(
       {
@@ -15,9 +16,8 @@ export function Graph() {
     )
   }
 
-  console.log('Graph:', data)
   return (
-    <ResponsiveContainer width="100%" height={250}>
+    <ResponsiveContainer width="100%" height={ !isDesktop ? 550 : 250 }>
       <BarChart data={data}>
         <XAxis
           dataKey="name"

@@ -7,11 +7,16 @@ import Register from './pages/auth/Register'
 import notFound from './pages/notFound'
 import ForgotPassword from './pages/auth/ForgotPassword';
 import Logout from './pages/auth/Logout'
-import EditTransaction from "../src/pages/ExpenseVouge/edit/[...id]";
+import EditTransaction from "../src/pages/ExpenseVouge/edit/[...id]"
+import { useMedia } from "./hooks/useMedia"
+import { Graph } from "./components/Graph"
+import chart from "./pages/ExpenseVouge/chart"
+import bar from './pages/ExpenseVouge/bar'
 
 
 function App() {
   const { isLoggedInState } = useContext(cookiesContext)
+  const { isDesktop } = useMedia()
 
   return (
     <div className="App h-max">
@@ -24,6 +29,14 @@ function App() {
             <Route path="/register" exact element={isLoggedInState ? <Navigate to="/" /> : <Register />} />
             <Route path="/edit/:id" element={<EditTransaction/>} />
             <Route path="*" Component={notFound}/>
+            {
+              !isDesktop && (
+                <>
+                  <Route path="/chart" exact Component={chart} />
+                  <Route path="/graph" exact Component={bar} />
+                </>
+              )
+            }
           </Routes>
         </Router>
     </div>

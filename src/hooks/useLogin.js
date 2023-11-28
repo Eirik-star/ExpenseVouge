@@ -9,7 +9,6 @@ export const useLogin = () => {
     const nav = useNavigate()
 
     const handleSignInResult = (results) => {
-        console.log(results)
         const authInfo = {
             userID: results.user.uid,
             email: results.user.email,
@@ -17,7 +16,6 @@ export const useLogin = () => {
             profilePhoto: results.user.photoURL,
             isAuth: true,
         };
-        console.log(authInfo)
         setCookieAuth('auth', authInfo, { path: '/' });
         toggleLog(true);
         nav("/")
@@ -50,7 +48,6 @@ export const useLogin = () => {
                 profilePhoto: results.user.photoURL,
                 isAuth: true,
             };
-            console.log(authInfo)
             setCookieAuth('auth', authInfo, { path: '/' });
             toggleLog(true);
             nav("/")

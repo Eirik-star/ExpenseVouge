@@ -27,7 +27,6 @@ export const useGetDayTotals = () => {
 
   const getExpenseTotals = async () => {
     try {
-      console.count('getExpenseTotal Runs!')
       const transactionCollectionRef = collection(db, 'transactions');
 
       const promises = datesInRange.map(async (cat) => {
