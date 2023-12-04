@@ -10,9 +10,10 @@ export const useTransactionOperations = () => {
     //Date
     function getCurrentDate() {
         const options = { year: 'numeric', month: 'numeric', day: 'numeric' };
-        const formattedDate = new Intl.DateTimeFormat('en-IN', options).format(currentDate);
+        const formattedDate = new Intl.DateTimeFormat('en-GB', options).format(currentDate);
         return formattedDate;
     }
+
 
     //Time
     function getCurrentTime() {
@@ -23,7 +24,7 @@ export const useTransactionOperations = () => {
       
         const currentTime = `${hours}:${minutes}${ampm}`;
         return currentTime;
-      }
+    }
 
 
     // Adding

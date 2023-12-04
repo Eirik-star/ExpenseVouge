@@ -18,6 +18,7 @@ const getDatesInRange = () => {
   return dateArray
 }
 
+
 export const datesInRange = getDatesInRange()
 
 export const useGetDayTotals = () => {
