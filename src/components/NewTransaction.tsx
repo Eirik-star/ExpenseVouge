@@ -76,7 +76,7 @@ export default function NewTransaction(){
             <PenSquare height={22} /> <span>Add Transaction</span>
         </DialogTrigger>
         <DialogTrigger className="flex items-center justify-center w-14 h-14 bg-indigo-500 rounded-full lg:hidden">
-            <Plus size={28} />
+            <Plus size={28} stroke="white" />
         </DialogTrigger>
         <DialogContent className="bg-white border-2 border-black">
             <DialogHeader>
@@ -143,7 +143,7 @@ export default function NewTransaction(){
                         )
                     }
                 </div>
-                <Button onClick={onSubmit} onSubmit={onSubmit} className="bg-black text-white hover:bg-gray-900">Add Transaction</Button>{selectedOption}
+                <Button onClick={onSubmit} onSubmit={onSubmit} className="bg-black text-white hover:bg-gray-900">Add Transaction</Button>
             </div>
         </DialogContent>
     </Dialog>

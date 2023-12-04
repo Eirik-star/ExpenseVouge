@@ -242,46 +242,44 @@
 
   /* Main Container */
   .main-cont{
-    @apply w-screen h-full lg:w-[84.5vw] lg:h-[99vh] lg:border-black lg:ring-0 lg:ring-white lg:border-2 lg:rounded-xl bg-[#FAF9F6] scroll-smooth
-    /* @apply w-full h-full border-pink-500 bg-gray-100 */
+    @apply w-screen h-full lg:w-[84.5vw] lg:h-[99vh] lg:border-black lg:ring-0 lg:ring-white lg:border-2 lg:rounded-xl bg-[#FAF9F6] scroll-smooth lg:flex lg:items-center
   }
 
   /* Title */
   .title{
-    /* @apply w-full h-16 border-black border-b-2 bg-[#252525] object-contain overflow-hidden rounded-t-lg */
-    @apply w-full h-16 fixed bg-[#252525] object-contain overflow-hidden lg:border-black lg:border-b-2 lg:rounded-t-lg
+    @apply w-full h-16 sticky top-0 lg:fixed bg-black object-contain overflow-hidden lg:w-[84.3%] lg:mt-1 lg:bg-inherit lg:rounded-t-lg flex items-center
   }
 
   .title_text{
-    @apply pl-[2rem] pt-[.7rem] font-bold text-3xl text-yellow-50
+    @apply pl-[2rem] font-bold text-3xl text-yellow-50 lg:text-slate-950
   }
 
   /* Dashboard Styles */
   .dashboard{
-    @apply w-full flex flex-row items-center justify-evenly
+    @apply w-full flex flex-row justify-evenly lg:h-[91.5%] lg:mt-14
   }
 
   .left-cont{
-    @apply w-[97%] lg:w-[55%] flex flex-col 
+    @apply w-[97%] lg:w-[55%] flex flex-col
   }
 
   /* Balance  */
   .balance{
-    @apply h-56 flex flex-wrap items-center mt-[4.5rem] mb-3 gap-1 justify-center lg:h-32 lg:flex-nowrap lg:flex-row lg:items-center lg:gap-3
-    /* @apply flex flex-wrap lg:flex-row */
+    @apply h-56 flex flex-wrap items-center mt-2 mb-3 gap-1 justify-center lg:h-28 lg:flex-nowrap lg:flex-row lg:items-center lg:gap-3
   }
 
   .card-1{
-    @apply lg:w-full flex flex-row bg-green-400 border-none order-2 lg:order-1 w-[48.8%]
+    @apply lg:w-full flex flex-row bg-white ring-1 ring-emerald-400 order-2 lg:order-1 w-[48.8%] hover:scale-[1.05] delay-0
+
   }
 
   .card-2{
-    /* @apply lg:w-full flex flex-row bg-blue-400 border-none order-1 lg:order-2 w-full */
-    @apply lg:w-full flex flex-row bg-blue-400 border-none order-1 lg:order-2 w-[97.6%] 
+    @apply lg:w-full flex flex-row bg-black ring-1 ring-indigo-400 order-1 lg:order-2 lg:bg-white lg:border-none w-[97.6%] hover:scale-[1.05]
+
   }
 
   .card-3{
-    @apply lg:w-full flex flex-row bg-red-500 border-none order-3 w-[48.8%]
+    @apply lg:w-full flex flex-row bg-white ring-1 ring-rose-300 order-3 w-[48.8%] hover:scale-[1.05]
   }
 
   .card-header{
@@ -296,15 +294,8 @@
     @apply flex flex-row items-center justify-between space-y-0 pb-2
   }
 
-  /* Recent Transactions */
-
-
-
-
   .right-cont{
-    @apply w-[40%] flex flex-col mt-[5rem]
-
-
+    @apply w-[40%] flex flex-col justify-center
   }
 }
 

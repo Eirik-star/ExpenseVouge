@@ -16,8 +16,9 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
   } from "@/components/ui/dropdown-menu"
+import React from 'react'
   
-  export function UserNav() {
+ function UserNav() {
     const { name, email, profilePhoto } = useGetUserInfo()
     const { logOut } = useLogin()
     return (
@@ -39,16 +40,12 @@ import {
           </DropdownMenuLabel>
           <DropdownMenuSeparator />
           <DropdownMenuGroup>
-            <DropdownMenuItem className='cursor-pointer hover:bg-gray-200'>
+            {/* <DropdownMenuItem className='cursor-pointer hover:bg-gray-200'>
               Profile
-            </DropdownMenuItem>
-            <DropdownMenuItem className='cursor-pointer hover:bg-gray-200'>
-              Billing
-            </DropdownMenuItem>
+            </DropdownMenuItem> */}
             <DropdownMenuItem className='cursor-pointer hover:bg-gray-200'>
               Settings
             </DropdownMenuItem>
-            <DropdownMenuItem>New Team</DropdownMenuItem>
           </DropdownMenuGroup>
           <DropdownMenuSeparator />
           <DropdownMenuItem onClick={logOut} className='cursor-pointer hover:bg-gray-200'>
@@ -58,3 +55,5 @@ import {
       </DropdownMenu>
     )
   }
+
+export default UserNav

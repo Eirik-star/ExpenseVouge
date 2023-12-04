@@ -29,15 +29,15 @@ const DonutChart = () => {
 
   return (
     <>
-      <ResponsiveContainer width="90%" height={ !isDesktop ? 596 : 250 }>
+      <ResponsiveContainer width="90%" height={ !isDesktop ? 300 : 255 }>
       <PieChart>
         <Pie
           data={filteredData}
           dataKey="value"
           cx="50%"
           cy="50%"
-          innerRadius={!isDesktop ? 60 : 45}
-          outerRadius={!isDesktop ? 140 : 80}
+          innerRadius={!isDesktop ? 45 : 35}
+          outerRadius={!isDesktop ? 80 : 80}
           fill="#252525"
           label
         >

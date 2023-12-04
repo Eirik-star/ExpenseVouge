@@ -1,9 +1,10 @@
-import { UserNav } from './profileCard'
+import UserNav  from './profileCard'
 import { useLogin } from '../hooks/useLogin'
 import { useGetUserInfo } from '../hooks/useGetUserInfo'
 import NewTransaction from './NewTransaction'
 import { BarChart2, Home, LogOut, PieChart } from 'lucide-react'
 import { Link, useLocation } from 'react-router-dom'
+import { memo } from 'react'
 
 export default function Navbar(){
     const { logOut } = useLogin()
@@ -26,25 +27,22 @@ export default function Navbar(){
             </nav>
         </header>
 
-        <div className="z-20 lg:hidden fixed bottom-20 right-4">
-            {
-                location.pathname=='/' && <NewTransaction />
-            }
-            <div className="w-[97%] h-16 fixed bg-[#252525] bottom-1 left-1 rounded-full">
-                <ul className='w-full h-full flex justify-around items-center'>
-                    <Link to='/' className='bg-white rounded-full px-2.5 py-2.5'>
-                        <Home/>
+        <div className="z-20 lg:hidden fixed bottom-2 right-2">
+            <div className="w-[80%] h-16 fixed bg-black bottom-1 left-1 rounded-full">
+                <ul className='w-full h-full flex items-center justify-around'>
+                    <Link to='/'>
+                        <Home stroke={location.pathname=='/' ? '#3F51B5' : 'white'} />
                     </Link>
                     <Link to='/chart'>
-                        <PieChart stroke='white'/>
-                    </Link>
-                    <Link to='/graph'>
-                        <BarChart2 stroke='white'/>
+                        <PieChart stroke={location.pathname=='/chart' ? '#3F51B5' : 'white'} />
                     </Link>
                     <li>
                         <UserNav/>
                     </li>
                 </ul>
+            </div> 
+            <div>
+                <NewTransaction />
             </div>
         </div>
         </>

@@ -9,9 +9,7 @@ import ForgotPassword from './pages/auth/ForgotPassword';
 import Logout from './pages/auth/Logout'
 import EditTransaction from "../src/pages/ExpenseVouge/edit/[...id]"
 import { useMedia } from "./hooks/useMedia"
-import { Graph } from "./components/Graph"
 import chart from "./pages/ExpenseVouge/chart"
-import bar from './pages/ExpenseVouge/bar'
 
 
 function App() {
@@ -33,7 +31,6 @@ function App() {
               !isDesktop && (
                 <>
                   <Route path="/chart" exact Component={chart} />
-                  <Route path="/graph" exact Component={bar} />
                 </>
               )
             }

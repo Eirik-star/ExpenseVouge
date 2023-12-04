@@ -16,8 +16,9 @@ export function Graph() {
     )
   }
 
+
   return (
-    <ResponsiveContainer width="100%" height={ !isDesktop ? 550 : 250 }>
+    <ResponsiveContainer width="100%" height={ !isDesktop ? 325 : 245 }>
       <BarChart data={data}>
         <XAxis
           dataKey="name"
