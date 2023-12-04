@@ -25,7 +25,7 @@ export default function RecentTransactions(){
         <>
         <div className="text-xl font-semibold pt-3 pl-3">Recent Transactions: </div>
         <div className='w-full h-[48vh] lg:h-[65vh] overflow-y-scroll scroll-smooth mt-2 mb-20 lg:mb-0 rounded-2xl'>
-         <ul className="flex flex-col items-center gap-[0.30rem] w-full overflow-hidden pt-1">
+         <ul className="flex flex-col items-center gap-[0.30rem] w-full overflow-hidden py-1">
             {
                 transactions.length == 0 ? 
                 <h1>No Transactions</h1> :

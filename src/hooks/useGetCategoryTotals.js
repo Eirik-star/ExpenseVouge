@@ -1,8 +1,8 @@
 import { query, where, collection, getDocs } from "firebase/firestore"
 import { db } from "../config/firebase-config"
-import { useEffect, useLayoutEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { useGetTransactions } from "./useGetTransactions";
-
+import { useGetUserInfo } from "./useGetUserInfo";
 
 export const useGetCategoryTotals = () => {
     const categories = [
@@ -19,6 +19,7 @@ export const useGetCategoryTotals = () => {
       ]
   const [categoryTotals, setCategoryTotals] = useState([])
   const { transactionTotals } = useGetTransactions()
+  const { userID } = useGetUserInfo()
   const { balance } = transactionTotals
 
   const getCategoryTotals = async () => {
@@ -26,7 +27,7 @@ export const useGetCategoryTotals = () => {
       const transactionCollectionRef = collection(db, 'transactions');
 
       const promises = categories.map(async (cat) => {
-        const func = query(transactionCollectionRef, where('category', '==', cat))
+        const func = query(transactionCollectionRef, where('category', '==', cat), where('userID', '==', userID))
         let val = 0
 
         const snapshot = await getDocs(func)

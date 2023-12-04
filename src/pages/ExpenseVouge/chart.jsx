@@ -6,8 +6,8 @@ import Navbar from "@/components/Navbar"
 function chart() {
   return (
     <div className="h-screen w-screen bg-[FAFAFA]">
-      <h1 className="ml-10 pt-10 font-semibold text-2xl">Your Spending Summary: </h1>
-      <div className="flex flex-col gap-16">
+      <h1 className="ml-10 pt-7 font-semibold text-2xl">Your Spending Summary: </h1>
+      <div className="flex flex-col gap-16 justify-evenly">
         <DonutChart />
         <Graph />
       </div>

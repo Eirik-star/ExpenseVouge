@@ -3,7 +3,7 @@ import { db } from "../config/firebase-config"
 import { useState, useMemo } from "react";
 import { format } from "date-fns"
 import { useGetTransactions } from "./useGetTransactions";
-
+import { useGetUserInfo } from "./useGetUserInfo";
 
 const getDatesInRange = () => {
   const dateArray = []
@@ -24,13 +24,18 @@ export const useGetDayTotals = () => {
   const [expenseTotals, setExpenseTotals] = useState([])
   const { transactionTotals } = useGetTransactions()
   const { balance } = transactionTotals
+  const { userID } = useGetUserInfo()
 
   const getExpenseTotals = async () => {
     try {
       const transactionCollectionRef = collection(db, 'transactions');
 
       const promises = datesInRange.map(async (cat) => {
-        const func = query(transactionCollectionRef, where('date', '==', format(cat, 'dd/M/Y')), where('transactionType', '==', 'expense'))
+        const func = query(
+          transactionCollectionRef, 
+          where('date', '==', format(cat, 'dd/M/Y')), 
+          where('transactionType', '==', 'expense'),
+          where('userID', '==', userID))
         let val = 0
 
         const snapshot = await getDocs(func)
