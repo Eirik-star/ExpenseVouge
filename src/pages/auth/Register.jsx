@@ -1,13 +1,14 @@
 import { useLogin } from "../../hooks/useLogin"
 import { Link } from "react-router-dom"
-import { useRef } from "react"
+import { useRef, useState } from "react"
 
 export default function Register(){
-    const { signUp, signInWithGoogle } = useLogin()
+    const { signUp, signInWithGoogle, getMsg } = useLogin()
     const nameRef = useRef(null)
-    const emailRef = useRef(null);
-    const passwordRef = useRef(null);
-    var nameValue, emailValue, passwordValue;
+    const emailRef = useRef(null)
+    const passwordRef = useRef(null)
+    const [ msg, setMsg ] = useState('')
+    var nameValue, emailValue, passwordValue
     
     return(
         <div className="register-page">
@@ -44,7 +45,11 @@ export default function Register(){
                         ref={passwordRef}
                         onChange={() => passwordValue = passwordRef.current.value}
                     />
-                    <button className="login-btn hover:bg-primary-300 mb-4" onClick={() => {signUp(nameValue, emailValue, passwordValue)}} type="submit">Create account</button>
+                    <p className="font-thin text-red-500 text-sm italic">{msg}</p>
+                    <button className="login-btn hover:bg-primary-300 mb-4" onClick={() => {
+                        signUp(nameValue, emailValue, passwordValue)
+                        setMsg(getMsg())
+                        }} type="submit">Create account</button>
                     <p>Already have an account? <Link to="/login"><span className="text-primary-400 hover:text-primary-600 hover:underline">Login</span></Link></p>
                 </div>
             </div>

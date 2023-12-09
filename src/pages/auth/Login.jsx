@@ -1,12 +1,14 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, } from "react-router-dom";
 import { useLogin } from '../../hooks/useLogin'
 
+
 export const Login = () => { 
-    const { signIn, signInWithGoogle } = useLogin()
-    const emailRef = useRef(null);
-    const passwordRef = useRef(null);
-    var emailValue, passwordValue;
+    const { signIn, signInWithGoogle, getMsg } = useLogin()
+    const emailRef = useRef(null)
+    const passwordRef = useRef(null)
+    const [ msg, setMsg ] = useState()
+    var emailValue, passwordValue
 
     return (
         <div className="login-page">
@@ -37,7 +39,11 @@ export const Login = () => {
                         ref={passwordRef}
                         onChange={() => passwordValue = passwordRef.current.value}
                     />
-                    <button className="login-btn hover:bg-primary-300 mb-5" onClick={() => {signIn(emailValue, passwordValue)}} type="submit">Login</button>
+                    <p className="text-red-500 font-thin italic">{msg}</p>
+                    <button className="login-btn hover:bg-primary-300 mb-5" onClick={() => {
+                        signIn(emailValue, passwordValue)
+                        setMsg(getMsg())
+                        }} type="submit">Login</button>
                     <p className="text-primary-400 hover:text-primary-600 hover:underline"><Link to="/reset-password">Forgot Password?</Link></p>
                     <p>Don't have a acccount? <Link to="/register"><span className="text-primary-400 hover:text-primary-600 hover:underline">Create one</span></Link></p>
                 </div>

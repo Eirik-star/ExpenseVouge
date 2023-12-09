@@ -51,7 +51,6 @@ export const useGetDayTotals = () => {
 
       const totals = await Promise.all(promises);
       setExpenseTotals(totals)
-      console.log(expenseTotals)
     } catch (e) {
       console.error(e)
     }

@@ -1,5 +1,6 @@
 import Navbar from '../../components/Navbar'
 import Dashboard from '../../components/Dashboard'
+import { Toaster } from '@/components/ui/toaster';
 
 export const ExpenseVouge = () => { 
     return (
@@ -7,6 +8,7 @@ export const ExpenseVouge = () => {
             <Navbar />
             <section className="main-cont">
                 <Dashboard />
+                <Toaster />
             </section>
         </main>
     );

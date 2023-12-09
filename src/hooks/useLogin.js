@@ -1,12 +1,13 @@
 import { auth, Gprovider } from "../config/firebase-config"
 import { signInWithPopup, signInWithEmailAndPassword, signOut, createUserWithEmailAndPassword } from "firebase/auth";
 import { cookiesContext } from "../contexts/Cookies";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export const useLogin = () => { 
     const { setCookieAuth, removeCookieAuth, toggleLog } = useContext(cookiesContext)
     const nav = useNavigate()
+    const  [message, setMessage] = useState('')
 
     const handleSignInResult = (results) => {
         const authInfo = {
@@ -26,7 +27,14 @@ export const useLogin = () => {
             const results = await signInWithEmailAndPassword(auth, email, password);
             handleSignInResult(results)
         } catch (error) {
-            console.error(error);
+            if(error.code === 'auth/missing-email'){
+                setMessage("Enter Email Address!")
+            } else if(error.code === 'auth/missing-password'){
+                setMessage("Enter Password Address!")
+            } else if(error.code === 'auth/invalid-email'){
+                setMessage("Invalid Email!")
+            }
+            else console.error(error)
         }
     }
 
@@ -52,7 +60,18 @@ export const useLogin = () => {
             toggleLog(true);
             nav("/")
         } catch(error) {
-            console.error(error)
+            if(error.code === 'auth/missing-email'){
+                setMessage("Enter Email Address!")
+            } else if(error.code === 'auth/missing-password'){
+                setMessage("Enter Password!")
+            } else if(error.code === 'auth/invalid-email'){
+                setMessage("Invalid Email!")
+            } else if(error.code === 'auth/email-already-exists'){
+                setMessage("Account already exists")
+            } else if(error.code === 'auth/weak-password'){
+                setMessage("Password must be alteast 6 characters!")
+            }
+            else console.error(error)
         }
     }
     
@@ -68,5 +87,9 @@ export const useLogin = () => {
         })
     }
 
-    return { signIn, signInWithGoogle, signUp, logOut }
+    const getMsg = () => {
+        return message
+    }
+
+    return { signIn, signInWithGoogle, signUp, logOut, getMsg }
 }
