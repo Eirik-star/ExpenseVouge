@@ -68,7 +68,7 @@ export default function RecentTransactions(){
                                 className='flex flex-row justify-between items-center px-2 py-1 cursor-pointer hover:bg-red-500 rounded-lg' 
                                 onClick={() =>{
                                     toast({
-                                        variant: "delete",
+                                        variant: "del",
                                         title: "Deleted Transaction:",
                                         description: description,
                                     })
