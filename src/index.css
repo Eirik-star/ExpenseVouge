@@ -114,7 +114,7 @@
   }
 
   .card-1{
-    @apply lg:w-full flex flex-row ring-1 ring-emerald-100 order-2 lg:order-1 w-[48.8%] lg:hover:scale-[1.05] delay-0
+    @apply lg:w-full flex flex-row ring-1 ring-emerald-100 lg:ring-emerald-200 lg:bg-emerald-50 order-2 lg:order-1 w-[48.8%] lg:hover:scale-[1.05] delay-0
 
   }
 
@@ -124,7 +124,7 @@
   }
 
   .card-3{
-    @apply lg:w-full flex flex-row ring-1 ring-rose-100 order-3 w-[48.8%] lg:hover:scale-[1.05]
+    @apply lg:w-full flex flex-row ring-1 ring-rose-100 lg:ring-rose-200 lg:bg-rose-50 order-3 w-[48.8%] lg:hover:scale-[1.05]
   }
 
   .card-header{
