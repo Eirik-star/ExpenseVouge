@@ -31,9 +31,6 @@ const toastVariants = cva(
         add: "border border-emeral-400 bg-emerald-500 text-foreground",
       },
     },
-    defaultVariants: {
-      variant: "add",
-    },
   }
 )
 
