@@ -16,6 +16,8 @@ export function Graph() {
     )
   }
 
+  console.log(data)
+
 
   return (
     <ResponsiveContainer width="100%" height={ !isDesktop ? 250 : 245 }>

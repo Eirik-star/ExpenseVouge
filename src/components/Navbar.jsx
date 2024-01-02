@@ -28,7 +28,7 @@ export default function Navbar(){
 
         {/* Mobile Navbar */}
         <div className="z-20 lg:hidden fixed bottom-2 right-2">
-            <div className="w-[80%] md:w-[90%] h-16 fixed bg-black bottom-1 left-1 rounded-full">
+            <div className="w-[80vw] md:w-[90vw] h-16 fixed bg-black bottom-1 left-1 rounded-full">
                 <ul className='w-full h-full flex items-center justify-around'>
                     <Link to='/'>
                         <Home stroke={location.pathname=='/' ? '#3F51B5' : 'white'} />

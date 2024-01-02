@@ -46,7 +46,7 @@ export default function NewTransaction(){
       ];
 
       const handleSelectChange = (e) => {
-        setSelectedOption(e.target.value);
+        setSelectedOption(e.target.value)
       };
     
     const onSubmit = (e) => {
@@ -68,8 +68,8 @@ export default function NewTransaction(){
         
             if (descriptionRef.current) descriptionRef.current.value = ''
             if (transactionAmountRef.current) transactionAmountRef.current.value = ''
-            if (incomeRef.current) incomeRef.current.checked = false;
-            if (expenseRef.current) expenseRef.current.checked = true;
+            if (incomeRef.current) incomeRef.current.checked = false
+            if (expenseRef.current) expenseRef.current.checked = true
     }
 
     return(
@@ -152,6 +152,7 @@ export default function NewTransaction(){
                         title: "Transaction Added:",
                         description: descriptionRef.current?.value,
                     })
+                    setShowSelect(true)
                 }} 
                 className="bg-black text-white hover:bg-gray-900">Add Transaction</Button>
             </form>

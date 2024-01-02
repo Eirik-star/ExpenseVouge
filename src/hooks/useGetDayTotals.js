@@ -1,9 +1,10 @@
 import { query, where, collection, getDocs } from "firebase/firestore"
 import { db } from "../config/firebase-config"
-import { useState, useMemo } from "react";
+import { useState, useMemo } from "react"
 import { format } from "date-fns"
-import { useGetTransactions } from "./useGetTransactions";
-import { useGetUserInfo } from "./useGetUserInfo";
+import { useGetTransactions } from "./useGetTransactions"
+import { useGetUserInfo } from "./useGetUserInfo"
+
 
 const getDatesInRange = () => {
   const dateArray = []
@@ -34,7 +35,7 @@ export const useGetDayTotals = () => {
       const promises = datesInRange.map(async (cat) => {
         const func = query(
           transactionCollectionRef, 
-          where('date', '==', format(cat, 'dd/M/Y')), 
+          where('date', '==', format(cat, 'dd/MM/Y')), 
           where('transactionType', '==', 'expense'),
           where('userID', '==', userID))
         let val = 0
