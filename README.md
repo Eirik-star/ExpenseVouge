@@ -2,6 +2,17 @@
 
 ExpenseVouge is an web application built using Vite and React. Vite is a fast build tool for modern web development, and it is specifically designed to work seamlessly with React.
 
+## Preview
+
+### Desktop UI
+
+![Desktop UI](https://github.com/Abubakkar-Siddhiq/ExpenseVouge/blob/main/screenshots/desktop.png?raw=true)
+
+### Mobile UI
+![Mobile UI page 1](https://github.com/Abubakkar-Siddhiq/ExpenseVouge/blob/main/screenshots/mobile_1.png?raw=true)
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+![Mobile UI page 2](https://github.com/Abubakkar-Siddhiq/ExpenseVouge/blob/main/screenshots/mobile_2.png?raw=true)
+
 ## Getting Started
 
 ### Prerequisites
