@@ -31,10 +31,10 @@ export default function Navbar(){
             <div className="w-[80vw] md:w-[90vw] h-16 fixed bg-black bottom-1 left-1 rounded-full">
                 <ul className='w-full h-full flex items-center justify-around'>
                     <Link to='/'>
-                        <Home stroke={location.pathname=='/' ? '#3F51B5' : 'white'} />
+                        <Home stroke={location.pathname=='/' ? '#3F51B5' : 'yellow'} />
                     </Link>
                     <Link to='/chart'>
-                        <PieChart stroke={location.pathname=='/chart' ? '#3F51B5' : 'white'} />
+                        <PieChart stroke={location.pathname=='/chart' ? '#3F51B5' : 'yellow'} />
                     </Link>
                     <li>
                         <UserNav/>
