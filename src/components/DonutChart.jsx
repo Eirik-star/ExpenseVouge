@@ -34,8 +34,8 @@ const DonutChart = () => {
         <Pie
           data={filteredData}
           dataKey="value"
-          cx="50%"
-          cy="50%"
+          cx="60%"
+          cy="40%"
           innerRadius={!isDesktop ? 45 : 35}
           outerRadius={!isDesktop ? 80 : 80}
           fill="#252525"
